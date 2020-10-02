@@ -20,7 +20,7 @@ class FirstFragment : Fragment(R.layout.fragment_first) {
             val response: ArticlesResponse = RetrofitProvider.lidersApi.ArticlesResponse()
             rev.adapter = ArticlesAdapter(response.articles.orEmpty().toMutableList()){
                 rev.adapter = ArticlesAdapter(response.articles.orEmpty().toMutableList()) {
-                    val direction = NewsFragmentDirections.actionFirstFragmentToNewFragment(it)
+                    val direction = FirstFragmentDirections.actionFirstFragmentToNewFragment(it)
                     findNavController().navigate(direction)
                 }
 
